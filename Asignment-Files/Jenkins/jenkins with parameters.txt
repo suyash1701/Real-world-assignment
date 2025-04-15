@@ -12,7 +12,7 @@ pipeline{
         stage{"Demo"}{
             steps{
                 
-                deletedir{}
+               deleteDir()
                 echo "string is not to: ${params.doployENV}""
                 sh "git clone ${parmans.gitURL}"
             }
