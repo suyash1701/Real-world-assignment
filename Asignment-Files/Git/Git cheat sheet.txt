@@ -1,4 +1,4 @@
-Git Cheatsheet for Freshers
+Git command
  1. Basic Git Setup----------------
 Configure Git (One-Time Setup)
  $ git config --global user.name "Your Name"
