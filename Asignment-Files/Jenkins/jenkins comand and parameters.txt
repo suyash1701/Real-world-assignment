@@ -1,0 +1,43 @@
+
+
+pipeline{
+    agent any
+    
+    parameters{
+        string(defaultvalue:"TEST", description: "which environment to depploy in:", name:"deployenv")
+        string(defaultvalues: "Paste URL HERE", description: "which environment to deploy in:", name:"gitURL")
+    }
+    
+    stages{
+        stage{"Demo"}{
+            steps{
+                
+                deletedir{}
+                echo "string is not to: ${params.doployENV}""
+                sh "git clone ${parmans.gitURL}"
+            }
+        }
+    }
+}
+
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'USERNAME', defaultValue: 'Suyash', description: 'Enter your name')
+        choice(name: 'ENV', choices: ['dev', 'qa', 'prod'], description: 'Choose the environment')
+        booleanParam(name: 'SHOULD_DEPLOY', defaultValue: true, description: 'Deploy after build?')
+    }
+
+    stages {
+        stage('Print Parameters') {
+            steps {
+                script {
+                    echo "Hello, ${params.USERNAME}!"
+                    echo "You chose environment: ${params.ENV}"
+                    echo "Should deploy? ${params.SHOULD_DEPLOY}"
+                }
+            }
+        }
+    }
+}

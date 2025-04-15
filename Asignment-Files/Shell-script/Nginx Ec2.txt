@@ -1,0 +1,47 @@
+Steps To install Nginx in ubuntu server EC2 
+
+Step 1 - Create a EC2 Instance ,Make your instance as per your requirement .
+Step 2 - In Network setting Edit inbound , Add rule -  IN TYPE - All TCP & HTTP &HTTPS ,
+              SOURCE TYPE - Anywhere , So server can run on any port
+Step 3 - Step 3 - Launch The server , Go to Dashboard Of Instances , Click On Your instances                          
+and Connect   
+
+Step 4 - You can connect by ubuntu server EC2 instance connect  or by using SSH client you can connect to Local machine 
+
+Step 5 - We go with ubuntu server EC2 
+Follow This Command to install nginx
+
+Sudo apt update 
+
+Sudo apt install nginx 
+
+Sudo nginx -t
+
+Sudo Service nginx status
+
+After this You should go to instance dashboard , copy public IP , on your local machine browser in url bar paste and check nginx page is running or not
+
+After That we can edit the web page of Nginx and can also we change the port Number
+
+Sudo systemctl start nginx
+Sudo systemctl enable nginx
+
+Cd /usr/share/nginx/html
+Sudo nano index.html 
+you  can edit this page too and also you can make your own web page and host 
+cd /var/www
+sudo mkdir tutorial
+cd tutorial
+sudo "${EDITOR:-vi}" index.html
+
+Port change 
+cd /etc/nginx/sites-enabled
+sudo "${EDITOR:-vi}" tutorial
+
+Default is 80:
+You can change or add your port 
+Listen port no ; 
+
+
+
+sudo service nginx restart

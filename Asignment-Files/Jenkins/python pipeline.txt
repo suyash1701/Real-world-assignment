@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Cloning the GitHub Repo') {
+            steps {
+                sh 'git clone https://github.com/suyash1701/py_pj.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                dir('py_pj') {
+                    sh 'python3 ops.py'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                dir('py_pj') {
+                    sh 'python3 -m pytest'
+                }
+            }
+        }
+    }
+}

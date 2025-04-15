@@ -1,0 +1,43 @@
+#!/bin/bash
+
+echo ***updating system***
+sudo apt updates
+echo *** let apt use packages over HTTPS ***
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+echo *** add the GPG key for the official Docker repositor ***
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+echo *** Docker repository to APT sources ***
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+echo *** Docker repo instead of the default Ubuntu repo ***
+sudo apt-cache policy docker-ce
+echo *** updating docker & installation is from the Docker repository for Ubuntu ***
+sudo apt update
+sudo apt install -y docker-ce
+echo *** Sucessfully install ***
+echo *** verifying Docker installation ***
+docker --version
+
+echo *** Start and Enable Docker ***
+sudo systemctl start docker
+sudo systemctl enable docker
+
+echo *** creating a folder for jenkins and changing the permission ***
+mkdir -p jenkinsvol
+sudo chown -R 1000:1000 $(pwd)/jenkinsvol
+
+echo *** creating docker image ***
+cat <<EOF > Dockerfile
+FROM jenkins/jenkins:lts
+USER root
+RUN apt-get update  && apt-get install -y maven
+USER jenkins
+EOF
+
+echo *** building dockerfile ***
+sudo docker build -t jenkinsimg .
+
+echo *** running dockerfile ***
+sudo docker run -d  -v $(pwd)/jenkinsvol:/var/jenkins_home  -v /var/run/docker.sock:/var/run/docker.sock  -v $(which docker):/usr/bin/docker -p 8080:8080 -p 50000:50000 jenkinsimg
+
+echo  "*** Jenkins setup completed successfully ***"
+echo "Jenkins is running on http://localhost:8080"

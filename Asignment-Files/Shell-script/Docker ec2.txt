@@ -1,0 +1,23 @@
+Steps To Install Docker & Create A Dockerfile in ubuntu Ec2 
+
+Step 1 - Create a EC2 Instance ,Make your instance as per your requirement .
+Step 2 - In Network setting Edit inbound , Add rule -  IN TYPE - All TCP & HTTP &HTTPS ,
+              SOURCE TYPE - Anywhere . By This Your Dockerfile Can run on Http or any server 
+Step 3 - Launch The server , Go to Dashboard Of Instances , Click On Your Instance and 
+              Connect 
+Step 4 - Connect using EC2 Instances Connect , You will Connect To ubuntu Command server 
+Step 5 -  After installation Ubuntu , Install Docker in ubuntu Server By Following this steps -
+         https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+
+Step  6 -Make a New Directory - mkdir Directory Name 
+Step  7 - After that run This command sudo chiown -R 1000:1000 $(pwd)/Directory name 
+Steps 8 - Then make a new file Dockerfile - 
+             Vi Dockerfile.sh
+             FROM jenkins/jenkkins:lts
+             USER root 
+             RUN apt-get update && apt-get install maven
+            USER jenkins 
+Step 9 - Build your Dockerfile by using this command 
+             sudo docker build -t image name .
+Step 10 - Run your Dockerfile 
+              Sudo docker run -p port no  image name  

@@ -1,0 +1,54 @@
+pipeline{
+    agent any 
+    
+    stages{
+        stage{'cloning the github repo'}{
+            steps{
+                sh git clone https://github.com/suyash1701/firstgit.git
+            }
+        }
+        stage{'Building the jar File'}{
+            steps{
+                sh mvn clean install
+            }
+        }
+        stage{'Runnning the jar file'}{
+            steps{
+                sh 'java -jar mavenproject-0.0.1-SNAPSHOT.jar'
+            }
+        }
+    }
+}
+
+
+
+
+
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Cloning the GitHub Repo') {
+            steps {
+                sh 'git clone https://github.com/suyash1701/firstgit.git'
+            }
+        }
+        stage('Building the JAR File') {
+            steps {
+                sh '''
+                    cd firstgit
+                    mvn clean install
+                '''
+            }
+        }
+        stage('Running the JAR File') {
+            steps {
+                sh '''
+                    cd firstgit/target
+                    java -jar mavenproject-0.0.1-SNAPSHOT.jar
+                '''
+            }
+        }
+    }
+}

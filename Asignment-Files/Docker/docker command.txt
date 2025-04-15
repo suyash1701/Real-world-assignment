@@ -1,0 +1,22 @@
+docker run -p port No -p 50000:50000 imagename
+
+docker run -p port No  -v C:\Users\HP\OneDrive\Desktop\Docker_jenk/var/jenkins_home jenkins_app
+
+
+docker build -t imagename .
+docker run image name
+docker ps -a
+docker start
+docker image
+docker container- running stage , virtual environment
+docker run -p 10000:8080 - os localprt / docker localport
+docker logs -f --tail 1000 
+rm/rmi/-f
+restart
+logs -f
+docker exec <container-id-or-name> <command>. 
+docker exec <container-id-or-name> ls /
+
+
+Dockerfile instruction or a Dockerfile directive.
+
