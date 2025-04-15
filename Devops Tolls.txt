@@ -41,6 +41,7 @@
 9. Artifact Management
 ● JFrog Artifactory, Nexus Repository – Artifact and dependency management
 ● Harbor – Container registry
+
 10. Collaboration & Communication
 ● Slack, Microsoft Teams – Communication platforms
 ● Conuence, Jira – Documentation and project tracking
