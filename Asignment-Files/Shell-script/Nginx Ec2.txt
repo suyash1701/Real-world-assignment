@@ -42,6 +42,4 @@ Default is 80:
 You can change or add your port 
 Listen port no ; 
 
-
-
 sudo service nginx restart
