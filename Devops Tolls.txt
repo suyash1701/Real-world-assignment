@@ -1,0 +1,46 @@
+1. Version Control
+● Git – Distributed version control system
+● GitHub, GitLab, Bitbucket – Hosting services for Git repositories
+
+2. Continuous Integration & Continuous Deployment (CI/CD)
+● Jenkins – Open-source automation server
+● GitLab CI/CD – Built-in CI/CD for GitLab repositories
+● GitHub Actions – CI/CD workow automation
+● CircleCI, Travis CI – Cloud-based CI/CD services
+● ArgoCD – GitOps continuous delivery for Kubernetes
+
+3. Conguration Management & Infrastructure as Code (IaC)
+● Ansible – Agentless automation tool
+● Puppet, Chef – Conguration management tools
+● Terraform – Infrastructure provisioning
+● CloudFormation – AWS-specic IaC
+
+4. Containerization & Orchestration
+● Docker – Containerization platform
+● Kubernetes – Container orchestration
+● Helm – Kubernetes package management
+
+5. Cloud Platforms
+● AWS, Azure, Google Cloud – Public cloud providers
+● OpenShift, VMware Tanzu – Enterprise Kubernetes platforms
+
+6. Monitoring & Logging
+● Prometheus & Grafana – Metrics monitoring and visualization
+● ELK Stack (Elasticsearch, Logstash, Kibana) – Log aggregation
+● Datadog, New Relic, Splunk – Cloud monitoring solutions
+
+7. Security & Compliance
+● SonarQube – Code quality and security analysis
+● Snyk, Trivy – Security scanning for dependencies and containers
+● Vault – Secrets management 
+
+8. Networking & Service Mesh
+● NGINX, Traek – Reverse proxy and load balancing
+● Istio, Linkerd – Service mesh for microservices networking
+
+9. Artifact Management
+● JFrog Artifactory, Nexus Repository – Artifact and dependency management
+● Harbor – Container registry
+10. Collaboration & Communication
+● Slack, Microsoft Teams – Communication platforms
+● Conuence, Jira – Documentation and project tracking
