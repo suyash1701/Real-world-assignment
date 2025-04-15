@@ -1,0 +1,67 @@
+Git Cheatsheet for Freshers
+ 1. Basic Git Setup----------------
+Configure Git (One-Time Setup)
+ $ git config --global user.name "Your Name"
+ $ git config --global user.email "your.email@example.com"
+ $ git config --list
+ Example: Like setting up your profile before joining a team. This ensures your commits have your name and email attached.
+
+ 2. Starting with Git-----------------
+Initialize a Repository
+ $ git init
+ Example: Like starting a new notebook to write notes, this command creates a Git repository in your project folder.
+ Clone an Existing Repository
+ $ git clone <repo-url>
+ Example: Like photocopying a book, this creates a local copy of a remote repository on your computer.
+
+ 3. Working with Files-----------------
+Check Status
+ $ git status
+ Example: Like checking which items in your to-do list are done, this shows modified or new files.
+ Add Files to Staging
+ $ git add <file-name>
+ $ git add .
+ Example: Like placing files into an envelope before sending them, this stages changes before committing.
+ Commit Changes
+ $ git commit -m "Your commit message"
+ Example: Like saving a draft with a meaningful title, this records changes in the repository.
+ View Commit History
+ $ git log
+ Example: Like checking past revisions of a document, this shows previous commits.
+
+4. Working with Remote Repositories-----------------
+Connect to a Remote Repository
+ $ git remote add origin <repo-url>
+ Push Changes to Remote Repository
+ $ git push origin <branch-name>
+ Pull Changes from Remote Repository
+ $ git pull origin <branch-name>
+ Example: Like uploading/downloading files to/from a cloud storage.
+
+ 5. Branching & Merging-----------------
+Create a New Branch
+ $ git branch <new-branch>
+ Switch to Another Branch
+ $ git checkout <branch-name>
+ Merge Branches
+ $ git merge <branch-name>
+
+ 6. Undo Changes-----------------
+Discard Unstaged Changes
+ $ git checkout -- <file-name>
+ Reset Staged Files
+ $ git reset <file-name>
+ Revert to a Previous Commit
+ $ git revert <commit-id>
+
+ 7. Useful Commands-----------------
+Check Differences
+ $ git diff
+ Stash Changes (Temporarily Save Work)
+ $ git stash
+ Apply Stashed Changes
+$ git stash pop
+ Delete a Branch
+ $ git branch -d <branch-name>
+ Pro Tip: Always pull the latest changes before pushing new updates to avoid conflicts!
+ $ git pull origin <branch-name>
