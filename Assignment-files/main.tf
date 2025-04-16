@@ -41,6 +41,9 @@ resource "aws_security_group" "TF_SG" {
   name        = "Security using Terraform"
   description = "Security using Terraform"
   vpc_id      = "Vpc id No"
+tags = {
+    Name = "TF_SG"
+  }
 
   ingress {
     description      = "HTTPS"
@@ -77,9 +80,7 @@ resource "aws_security_group" "TF_SG" {
     ipv6_cidr_blocks = ["::/0"]  
   }
 
-  tags = {
-    Name = "TF_SG"
-  }
-}
+  
+
 
 
