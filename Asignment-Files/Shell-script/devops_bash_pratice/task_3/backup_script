@@ -1,0 +1,10 @@
+#!/bin/bash
+
+src_dir="data"
+backup_dir="backup"
+timestamp=$(date +%Y%m%d_%H%M%S)
+
+mkdir -p $backup_dir
+cp -r $src_dir "$backup_dir/data_backup_$timestamp"
+
+echo "Backup done to $backup_dir/data_backup_$timestamp"
