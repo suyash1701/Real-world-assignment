@@ -1,0 +1,12 @@
+#!/bin/bash
+
+my_function() {
+    echo "hello!!! from my function"
+}
+my_function   # calling the function
+
+
+my_function() {
+    echo "hello $1, welcome!!"
+}
+my_function "suyash"
